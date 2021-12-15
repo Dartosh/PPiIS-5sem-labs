@@ -1,5 +1,16 @@
+import BookInfo from "./BookInfo";
 
-class Book {
+abstract class Book {
+
+    public info: BookInfo;
+    public file: File;
+    private id: number;
+
+    constructor(info: BookInfo, file: File, id: number) {
+        this.info = info;
+        this.file = file;
+        this.id = id;
+    }
 
 }
 
