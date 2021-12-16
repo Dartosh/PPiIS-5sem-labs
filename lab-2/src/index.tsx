@@ -3,11 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter, Route, Routes } from "react-router-dom";
+import NewBooks from "./components/new/New";
+import Bestsellers from "./components/bestsellers/Bestsellers";
+import OldBooks from "./components/oldButGold/oldBooks";
+import TopRated from "./components/topRated/topRated";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  (
+      <BrowserRouter>
+          <App>
+              <Routes>
+                  <Route path='/' element={<Bestsellers />}/>
+                  <Route path='/old' element={<OldBooks />}/>
+                  <Route path='/new' element={<NewBooks />}/>
+                  <Route path='/top' element={<TopRated />}/>
+              </Routes>
+          </App>
+      </BrowserRouter>
+  ),
   document.getElementById('root')
 );
 
